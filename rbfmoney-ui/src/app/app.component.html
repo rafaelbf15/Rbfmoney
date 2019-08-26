@@ -1,0 +1,21 @@
+<app-navbar *ngIf="exibindoNavbar()"></app-navbar>
+<ngx-spinner
+bdOpacity = 0.8
+bdColor = ""
+size = "medium"
+color = "rgba(26,69,252,0.68)"
+type = "ball-pulse"
+fullScreen = "false"
+>
+<p style="color: white" > Loading... </p>
+</ngx-spinner>
+<router-outlet></router-outlet>
+<p-growl></p-growl>
+<p-confirmDialog header="Confirmação" icon="fa fa-question-circle" #confirmacao>
+  <p-footer>
+    <button type="button" pButton icon="fa fa-check" label="Sim"
+      (click)="confirmacao.accept()"></button>
+    <button type="button" pButton icon="fa fa-times" label="Não"
+      (click)="confirmacao.reject()"></button>
+  </p-footer>
+</p-confirmDialog>
